@@ -1,0 +1,96 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Rationality Parameter Derivation: Objective $\to$ Likelihood $\to$ NLL}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Entropy-regularized expected utility}
+
+\[
+\max_{p \in \Delta}
+\left[
+\mathbb{E}_p[U]
+-
+\frac{1}{\lambda} H(p)
+\right]
+=
+\max_{p \in \Delta}
+\left[
+\sum_a p(a)U(a)
++
+\frac{1}{\lambda}\sum_a p(a)\log p(a)
+\right]
+\]
+
+\[
+\Downarrow
+\]
+
+\section{Optimal policy (softmax)}
+
+\[
+p_\lambda(a)
+=
+\frac{e^{\lambda U(a)}}{\sum_b e^{\lambda U(b)}}
+\]
+
+\[
+\Downarrow
+\]
+
+\section{Log-likelihood of observed choices}
+
+\[
+\ell(\lambda,\beta)
+=
+\sum_i
+\left[
+\lambda U_{i,y_i}
+-
+\log\sum_a e^{\lambda U_{i,a}}
+\right]
+\]
+
+\[
+\Downarrow
+\]
+
+\section{Binary specialization: $U_{i,0}=0,\;U_{i,1}=\eta_i$}
+
+\[
+\ell(\lambda)
+=
+\sum_i
+\left[
+\lambda y_i \eta_i
+-
+\log\left(1+e^{\lambda \eta_i}\right)
+\right]
+\]
+
+\[
+\Downarrow
+\]
+
+\section{Negative log-likelihood (optimized)}
+
+\[
+\mathrm{NLL}(\lambda)
+=
+\sum_i
+\left[
+\log\left(1+e^{\lambda \eta_i}\right)
+-
+\lambda y_i \eta_i
+\right]
+\]
+
+\end{document}

@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  navbar:
+    left:
+      - href: index.qmd
+        text: Overview
+      - href: data.qmd
+        text: Data & EDA
+      - href: transforms.qmd
+        text: Transforms & Preprocessing
+      - href: model.qmd
+        text: Modeling Framework
+      - href: alignment.qmd
+        text: Rationality & Alignment
+      - href: evaluation.qmd
+        text: Evaluation & Robustness
+      - href: discussion.qmd
+        text: Discussion & Extensions
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+    code-summary: "Show code"
+    theme: cosmo
+    warning: false
+    message: false
+    execute:
+      enabled: false
+    css: assets/styles.css
+    include-after-body: footer.html
+
+resources:
+  - assets/**
+

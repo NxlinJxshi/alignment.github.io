@@ -1,0 +1,1 @@
+# **Can we infer shopper preferences probabilistically from behavioral data, and evaluate how consistently their actions align with these preferences under contextual shifts such as holidays, weekends, or peak shopping periods? Further, can we define a rationality score to quantify the degree of alignment between inferred goals and observed decisions?**

@@ -1,0 +1,49 @@
+# Discussion & Extensions
+
+## Summary of Findings
+
+This project develops a Bayesian framework for inferring shopper preferences and quantifying value alignment in online shopping behavior. Key findings include:
+
+- **Preference Inference**: HMC/NUTS provides robust posterior estimates of preference parameters, with clear identification of features predictive of purchase behavior
+- **Rationality Estimation**: Post-hoc temperature scaling via Newton's method successfully estimates rationality parameters, improving calibration
+- **Contextual Effects**: Preliminary analysis suggests meaningful differences in behavior across temporal and contextual factors
+
+## Limitations
+
+1. **Session-Level Aggregation**: Lack of user-level identifiers limits ability to model individual preference heterogeneity
+2. **Temporal Dynamics**: Current model assumes static preferences; future work could incorporate temporal dynamics
+3. **Causal Inference**: Observational nature of data limits causal interpretation of feature effects
+4. **Compositional Modeling**: Full compositional data analysis (CoDA) framework not yet fully implemented
+
+## Next Steps
+
+### Feature Engineering
+
+- Expand feature set with interaction terms
+- Implement more sophisticated time-share features
+- Add derived features capturing behavioral patterns
+
+### EDA Expansion
+
+- Deeper exploration of contextual effects
+- Analysis of feature relationships and multicollinearity
+- Visualization of preference distributions across contexts
+
+### Alignment Finalization
+
+- Complete implementation of regret-based alignment scores
+- Stability score computation under context shifts
+- Hierarchical modeling of rationality parameters across cohorts
+
+### Model Extensions
+
+- Hierarchical Bayesian models for user-level preferences
+- Time-varying preference models
+- Causal inference framework for context effects
+
+### Evaluation
+
+- Comprehensive robustness analysis
+- Out-of-distribution evaluation
+- Conformal prediction for uncertainty quantification
+
